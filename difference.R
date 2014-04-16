@@ -16,17 +16,13 @@ draw_dif <- function(x,y1,y2, ylim=NA, ylab=NA, main=NA){
    plot(y1, col="blue")
   }
   else{
-   plot(y1, col="blue", ylim=c(0,ylim), ylab=ylab, main=main, lab.cex=1.2, xlab="Индекс статьи", las=1, yaxt='n')
-   axis(2,at=c(50000,100000,150000, 200000), labels=c("50k", "100k", "150k","200k"), las=1)
+   plot(y1, col="blue", ylim=c(0,ylim), ylab=ylab, main=main, lab.cex=1.2, xlab="Индекс статьи", las=1)
   }
-# lo = loess(y1~x)
-# lines(predict(lo), col='blue', lwd=2)
 
   #for the second parts
   dummyx = 1:length(y2)
   points(dummyx,y2, col="red")
-# lo = loess(y2~dummyx)
-# lines(predict(lo), col='red', lwd=2)
+
 
   #compute distance and draw lines between first and second parts
   for(i in 1:length(y1)){
